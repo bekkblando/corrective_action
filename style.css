@@ -1,0 +1,64 @@
+html body {
+  background: #2D8A98;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+.cust-nav{
+  background: #29A570;
+  margin-bottom:0;
+}
+
+nav a {
+  color:white;
+  text-transform: uppercase;
+}
+
+.btn-cust{
+  background: #29A570;
+}
+
+.action-buttons-cust{
+  margin-bottom: 1%;
+}
+
+.full-line{
+  width:100%;
+}
+
+.by-button{
+  margin-bottom: 1%;
+}
+
+.main-page{
+  text-align: center;
+  background: #2953A5;
+  color:white;
+  height:50%;
+}
+.main-page h1{
+  font-size: 400%;
+
+}
+.content{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.corrective_body{
+  padding-top:2%;
+}
+
+#name_edit_select, #name_edit, #category_edit_select, #category_edit_input{
+  width:100%;
+}
+
+#sub_category_edit_select, #add_sub_category_input, #by_month_image{
+  display:none;
+}
+
+#corrective_action_body{
+  text-align:center;
+}

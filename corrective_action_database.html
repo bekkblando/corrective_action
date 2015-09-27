@@ -1,0 +1,632 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<header>
+  <nav class="navbar cust-nav">
+  <div class="container">
+  <ul class="nav navbar-nav">
+    <li><a href="corrective_action_database.html">Corrective Action Database</a></li>
+  </ul>
+  </div>
+</nav>
+</header>
+<body>
+  <div class="container corrective_body">
+<div class="action-buttons-cust">
+  <a class="btn btn-success btn-cust" data-toggle="modal" data-target="#add">Add</a>
+  <a  class="btn btn-success btn-cust" data-toggle="modal" data-target="#reports">Reports</a>
+  <a  class="btn btn-success btn-cust" data-toggle="modal" data-target="#setup">Setup</a>
+  <a  class="btn btn-success btn-cust" data-toggle="modal" data-target="#corrective_action">Issue Corrective Action</a>
+</div>
+  <div class="table-responsive">
+  <table class="table table-striped">
+<tr>
+    <th>Edit</th>
+    <th>REF#</th>
+    <th>Category</th>
+    <th>Name and Job Title</th>
+    <th>Start Date</th>
+    <th>Issued To</th>
+    <th>Due Date</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td><a data-toggle="modal" data-target="#edit"><i class="fa fa-pencil fa-2x"></i></a></td>
+    <td>1944</td>
+    <td>Customer Complaints</td>
+    <td>Brad Doom - QA Manager /SQF Practitioner</td>
+    <td>6/10/2015</td>
+    <td>Mike Sullivan</td>
+    <td>6/15/2015</td>
+    <td>Pending</td>
+  </tr>
+</table>
+</div>
+</div>
+
+
+<!-- Add New Data Modal -->
+<div class="modal fade" id="add" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Add New Data
+      </div>
+      <div class="modal-body">
+        <h3>Investigation Information</h3>
+        <h4>Reference Number:</h4>
+        1946
+        <h4>Issue Date:</h4>
+        9/26/2015
+        <h4>Closed Date:</h4>
+        Not Closed
+        <h4>Status:</h4>
+
+        <form>
+          <select>
+            <option>Unset</option>
+            <option>Closed</option>
+            <option>Corrected</option>
+            <option>Pending</option>
+          </select>
+        </form>
+
+        <hr class="full-line"/>
+        <form>
+        <label for="category">Category</label>
+        <select id="category">
+          <option>Consumer Complaint</option>
+          <option>Critical GMP</option>
+          <option>Customer Complaints</option>
+          <option>Customer Contact</option>
+          <option>External Audit</option>
+          <option>HACCP</option>
+          <option>Internal Audit Program</option>
+          <option>Internal Issues</option>
+          <option>Private Label Retail Complaint</option>
+          <option>Regulatory</option>
+          <option>RMA</option>
+          <option>Warehouse Issue</option>
+        </select>
+        <label for="sub-category">Sub Category</label>
+        <select id="sub-category">
+          <option>Sub Categories</option>
+        </select>
+        <label for="name_title">Name and Title</label>
+        <input id="name_title" placeholder="Name and Title"/>
+        <label for="statement">Statement</label>
+        <input id="statement" placeholder="Statement"/>
+        <label for="recommendations">Recommendations</label>
+        <input id="recommendations" placeholder="Recommendations"/>
+        <label for="issued_to">Issued To</label>
+        <input id="issued_to" placeholder="issued_to"/>
+        <label for="due_date">Due Date</label>
+        <input id="due_date" type="date" placeholder="Due Date"/>
+    </form>
+
+          <hr class="full-line"/>
+      <h3>Corrective Actions Info</h3>
+      <hr class="full-line"/>
+
+      <form>
+      <label for="root_cause">Root Cause</label>
+      <input id="root_cause" placeholder="Root Cause"/>
+      <label for="pre_requisite_failure">Pre-Requisite Failure</label>
+      <input id="pre_requisite_failure" placeholder="Pre-Requisite Failure"/>
+      <label for="corrective_actions">Corrective Actions</label>
+      <div>
+      <textarea id="corrective_actions" placeholder="Corrective Actions"></textarea>
+    </div>
+      <label for="completion_date">Completion Date</label>
+      <input id="completion_date" type="date" placeholder="Completion Date"/>
+    </form>
+
+            </div>
+      <div class="modal-footer">
+        <div class='row'>
+            <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="add">Exit</a>
+<a id="closemodal" class="btn btn-success" data-dismiss="modal" target="add">Save</a>
+      </div>
+    </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Edit Records
+      </div>
+      <div class="modal-body">
+        <h3>Investigation Information</h3>
+        <h4>Reference Number:</h4>
+        1944
+        <h4>Issue Date:</h4>
+        6/10/2015
+        <h4>Closed Date:</h4>
+        Not Closed
+        <h4>Status:</h4>
+        <form>
+          <select>
+            <option>Pending</option>
+            <option>Closed</option>
+            <option>Corrected</option>
+          </select>
+        </form>
+        <h4>Approved By:</h4>
+        Not Approved
+        <hr class="full-line"/>
+        <label for="category">Category</label>
+        <form>
+        <select id="category">
+          <option>Customer Complaints</option>
+          <option>Consumer Complaint</option>
+          <option>Critical GMP</option>
+          <option>Customer Contact</option>
+          <option>External Audit</option>
+          <option>HACCP</option>
+          <option>Internal Audit Program</option>
+          <option>Internal Issues</option>
+          <option>Private Label Retail Complaint</option>
+          <option>Regulatory</option>
+          <option>RMA</option>
+          <option>Warehouse Issue</option>
+        </select>
+        <label for="sub-category">Sub Category</label>
+        <select id="sub-category">
+          <option>Foreign Material</option>
+        </select>
+        <label for="name_title">Name and Title</label>
+        <input id="name_title" placeholder="Name and Title" value="BRAD DOOM - QA MANAGER /SQF PRACTITIONER"/>
+        <label for="statement">Statement</label>
+        <input id="statement" placeholder="Statement"/>
+        <label for="recommendations">Recommendations</label>
+        <input id="recommendations" placeholder="Recommendations"/>
+        <label for="issued_to">Issued To</label>
+        <input id="issued_to" placeholder="issued_to"/>
+        <label for="due_date">Due Date</label>
+        <input id="due_date" type="date" placeholder="Due Date"/>
+      </form>
+      <hr class="full-line"/>
+      <h3>Corrective Actions Info</h3>
+      <hr class="full-line"/>
+      <form>
+      <label for="root_cause">Root Cause</label>
+      <input id="root_cause" placeholder="Root Cause"/>
+      <label for="pre_requisite_failure">Pre-Requisite Failure</label>
+      <input id="pre_requisite_failure" placeholder="Pre-Requisite Failure"/>
+      <label for="corrective_actions">Corrective Actions</label>
+      <div>
+      <textarea id="corrective_actions" placeholder="Corrective Actions"></textarea>
+    </div>
+      <label for="completion_date">Completion Date</label>
+      <input id="completion_date" type="date" placeholder="Completion Date"/>
+    </form>
+            </div>
+      <div class="modal-footer">
+        <div class='row'>
+            <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+<a id="closemodal" class="btn btn-success" data-dismiss="modal" target="edit">Save</a>
+<a id="closemodal" class="btn btn-danger" data-dismiss="modal" target="edit">Delete</a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Setup Modal -->
+<div class="modal fade" id="setup" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Setup
+      </div>
+      <div class="modal-body">
+      <a class="btn btn-success btn-cust" data-toggle="modal" data-target="#name_job_titles">Name and Job Titles</a>
+      <a class="btn btn-success btn-cust" data-toggle="modal" data-target="#category_edit">Edit Categories</a>
+      <a class="btn btn-success btn-cust" data-toggle="modal" data-target="#sub_category">Edit Sub-Categories</a>
+            </div>
+      <div class="modal-footer">
+        <div class='row'>
+            <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Setup Modals -->
+<!-- Name and Job Titles -->
+<div class="modal fade" id="name_job_titles" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Edit Name and Job Title
+      </div>
+      <div class="modal-body">
+        <input id="name_edit" placeholder="Select Name Below"/>
+        <div>
+<select id="name_edit_select">
+  <option>Not Selected</option>
+  <option>BRAD DOOM - QA MANAGER /SQF PRACTITIONER</option>
+  <option>CHARLES BROWN - SR. SQF PRACTITIONER</option>
+</select>
+</div>
+            </div>
+      <div class="modal-footer">
+        <div class='row'>
+            <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+<a id="closemodal" class="btn btn-success" data-dismiss="modal" target="edit">Save</a>
+<a id="closemodal" class="btn btn-danger" data-dismiss="modal" target="edit">Delete</a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Category Edit -->
+<div class="modal fade" id="category_edit" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Edit Categories
+      </div>
+      <div class="modal-body">
+        <input id="category_edit_input" placeholder="Select Category Below"/>
+        <div>
+<select id="category_edit_select">
+  <option>Not Selected</option>
+  <option>Critical GMP</option>
+  <option>HACCP</option>
+  <option>External Audit</option>
+</select>
+</div>
+            </div>
+      <div class="modal-footer">
+        <div class='row'>
+            <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+<a id="closemodal" class="btn btn-success" data-dismiss="modal" target="edit">Save</a>
+<a id="closemodal" class="btn btn-danger" data-dismiss="modal" target="edit">Delete</a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Sub-Category Edit -->
+<div class="modal fade" id="sub_category" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Sub Categories
+      </div>
+      <div class="modal-body">
+
+<!-- Add Sub Category -->
+<div>
+  <h3>Add Sub Category</h3>
+  <select id="add_sub_category_select">
+    <option>Not Selected</option>
+    <option>Consumer Complaint</option>
+  </select>
+  <input id="add_sub_category_input" placeholder="Type Sub-Category Here"/>
+  <a id="closemodal" class="btn btn-success" data-dismiss="modal" target="edit">Add</a>
+</div>
+<hr class="full-line"/>
+
+<!-- Delete Sub Category -->
+        <div>
+          <h3>Delete Sub-Category</h3>
+          Search By Category
+        <select id="sub_category_search">
+          <option>Not Selected</option>
+          <option>Consumer Complaint</option>
+        </select>
+        <div>
+<select id="sub_category_edit_select">
+  <option>Not Selected</option>
+  <option>Critical GMP</option>
+  <option>HACCP</option>
+  <option>External Audit</option>
+</select>
+</div>
+<a id="closemodal" class="btn btn-danger" data-dismiss="modal" target="edit">Delete</a>
+</div>
+            </div>
+      <div class="modal-footer">
+        <div class='row'>
+            <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End of Setup Modals -->
+
+
+
+<!-- Corrective Action Modal -->
+<div class="modal fade" id="corrective_action" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Corrective Action Report
+      </div>
+      <div class="modal-body" id="corrective_action_body">
+<img src="Corrective_Action_Image.png" alt="Corrective Action Report"/>
+            </div>
+      <div class="modal-footer">
+        <div class='row'>
+            <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+<a id="closemodal" class="btn btn-success" data-dismiss="modal" target="edit">Print</a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Charts and Reports Modals -->
+
+<!-- Main Modal -->
+<div class="modal fade" id="reports" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Charts and Reports
+      </div>
+      <div class="modal-body">
+<!-- Toggle Graphs -->
+<div>
+      <div class="btn-group by-button" role="group">
+  <a id="by_status_tab" type="button" class="btn btn-default">By Status</a>
+  <a id="by_month_tab" type="button" class="btn btn-default">By Month</a>
+      </div>
+<div>
+      <img id="by_status_image" class="img-responsive" src="By_Status_Image.png" alt="By Status Chart"/>
+      <img id="by_month_image" class="img-responsive" src="By_Month_Image.png" alt="By Month Chart"/>
+</div>
+</div>
+<!-- End Toggle Graphs -->
+
+<hr class="full-line"/>
+<h3>Charts and Reports</h3>
+<hr class="full-line"/>
+<label for="start_date">Start Date</label>
+<input id="start_date" type="date"/>
+<label for="end_date">End Date</label>
+<input id="end_date" type="date"/>
+<div>
+<a id="by_bmonth" class="btn btn-info" data-toggle="modal" data-target="#by_month_button">By Month</a>
+<a class="btn btn-info" data-toggle="modal" data-target="#by_category_button">By Category</a>
+<a class="btn btn-info" data-toggle="modal" data-target="#by_status_button">By Status</a>
+<label for="report_by_sub_category">By Sub-Category</label>
+<select id="report_by_sub_category_select">
+  <option>Not Selected</option>
+  <option>Consumer Complaint</option>
+</select>
+</div>
+            </div>
+      <div class="modal-footer">
+        <div class='row'>
+            <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+<a id="closemodal" class="btn btn-success" data-dismiss="modal" target="edit">Print</a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Of Main Modal -->
+
+<!-- Report By Month Modal -->
+<div class="modal fade" id="by_month_button" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        By Month Report
+      </div>
+      <div class="modal-body">
+<div>
+      <img class="img-responsive" src="By_Month_Image.png" alt="By Month Chart"/>
+</div>
+</div>
+<div class="modal-footer">
+  <div class='row'>
+      <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+<a id="closemodal" class="btn btn-success" data-dismiss="modal" target="edit">Print</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Report By Category Modal -->
+<div class="modal fade" id="by_category_button" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Category Chart
+      </div>
+      <div class="modal-body">
+<div>
+      <img class="img-responsive" src="By_Category_Image.png" alt="By Category Chart"/>
+</div>
+</div>
+<div class="modal-footer">
+  <div class='row'>
+      <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+<a id="closemodal" class="btn btn-success" data-dismiss="modal" target="edit">Print</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Report By Sub Category Modal -->
+<div class="modal fade" id="report_by_sub_category" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Sub-Category Chart
+      </div>
+      <div class="modal-body">
+<div>
+      <img class="img-responsive" src="By_Sub-Category_Image.png" alt="By Sub-Category Chart"/>
+</div>
+</div>
+<div class="modal-footer">
+  <div class='row'>
+      <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+<a id="closemodal" class="btn btn-success" data-dismiss="modal" target="edit">Print</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Report By Status Modal -->
+<div class="modal fade" id="by_status_button" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Status Chart
+      </div>
+      <div class="modal-body">
+<div>
+      <img class="img-responsive" src="By_Status_Image.png" alt="By Status Chart"/>
+</div>
+</div>
+<div class="modal-footer">
+  <div class='row'>
+      <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+<a id="closemodal" class="btn btn-success" data-dismiss="modal" target="edit">Print</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End of Reports and Charts Modals -->
+</body>
+
+<footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!-- Code to emulate what the functionality will be when backend is built -->
+  <script>
+// Document Ready
+  $( document ).ready(function() {
+
+// Name Editer Code
+    $('#name_edit_select').on('change', function() {
+    name_value = $("#name_edit_select option:selected").text();
+    if(name_value != 'Not Selected'){
+    $('#name_edit').val(name_value);
+}
+else{
+  $('#name_edit').val('');
+}
+});
+
+
+// Category Editer Code
+  $('#category_edit_select').on('change', function() {
+  name_value = $("#category_edit_select option:selected").text();
+  if(name_value != 'Not Selected'){
+  $('#category_edit_input').val(name_value);
+  }
+  else{
+  $('#category_edit_input').val('');
+  }
+  });
+
+
+
+// Sub Category Code
+  // Code for Delete Sub Category
+  $('#sub_category_search').on('change', function() {
+  name_value = $("#sub_category_search option:selected").text();
+  if(name_value != 'Not Selected'){
+  $('#sub_category_edit_select').css("display", "block");
+  }
+  else{
+  $('#sub_category_edit_select').css('display', "none");
+  }
+  });
+
+  // Code for Add Sub Category
+  $('#add_sub_category_select').on('change', function() {
+  name_value = $("#add_sub_category_select option:selected").text();
+  if(name_value != 'Not Selected'){
+  $('#add_sub_category_input').css("display", "block");
+  }
+  else{
+  $('#add_sub_category_input').css('display', "none");
+  }
+  });
+
+// Charts and Reports Code
+
+    // Code for By Status and By Month Buttons
+    $('#by_status_tab').click(function(){
+      $('#by_status_image').css("display", "block");
+      $('#by_month_image').css("display", "none");
+    });
+    $('#by_month_tab').click(function(){
+      $('#by_month_image').css("display", "block");
+      $('#by_status_image').css("display", "none");
+    });
+
+    $('#report_by_sub_category_select').on('change', function() {
+    name_value = $("#report_by_sub_category_select option:selected").text();
+    if(name_value != 'Not Selected'){
+        $('#report_by_sub_category').modal('show');
+    }
+    else{
+        $('#report_by_sub_category').modal('hide');
+    }
+    });
+});
+  </script>
+</footer>
