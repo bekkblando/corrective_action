@@ -7,7 +7,7 @@
   <nav class="navbar cust-nav">
   <div class="container">
   <ul class="nav navbar-nav">
-    <li><a href="corrective_action_database.html">Corrective Action Database</a></li>
+    <li><a href="index.html">Home</a></li>
   </ul>
   </div>
 </nav>
@@ -16,14 +16,66 @@
 <div class="container">
   <div class="content">
   <h1>Corrective Action</h1>
-  <a class="btn btn-large btn-success">Login</a>
+  <a class="btn btn-large btn-success" data-toggle="modal" data-target="#login">Login</a>
   <a class="btn btn-large btn-success">Customer Complaint</a>
 </div>
 </div>
 </section>
+
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Edit Name and Job Title
+      </div>
+      <div class="modal-body">
+<div class="container">
+  <div>
+  Username:demo
+  <br/>
+  Password:demo
+</div>
+        <label for="username">Enter Your UserName</label>
+        <input id="username" placeholder="UserName"/>
+        <div>
+        <label for="password">Enter Your Password</label>
+        <input id="password" placeholder="Password"/>
+      </div>
+      <div id="loginfailed">
+      </div>
+</div>
+            </div>
+      <div class="modal-footer">
+        <div class='row'>
+            <div class='col-sm-6'>
+<a id="closemodal" class="btn btn-primary" data-dismiss="modal" target="edit">Exit</a>
+<a id="loginsubmit" class="btn btn-success">Login</a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 <footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!-- Code to emulate what the functionality will be when backend is built -->
+  <script>
+  // Document Ready
+  $( document ).ready(function() {
+    $('#loginsubmit').click(function()
+    {
+      if ($('#username').val() === "demo" && $('#password').val() === "demo"){
+        window.location.href = "corrective_action_database.html";
+      }
+      else{
+        $('#loginfailed').html("Wrong Username or Password");
+      }
+    });
+});
+</script>
 </footer>
 </html>
