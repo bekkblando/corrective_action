@@ -51,6 +51,11 @@ nav a {
   padding-top:2%;
 }
 
+.admin_perms{
+  text-align: center;
+  color: white;
+}
+
 #name_edit_select, #name_edit, #category_edit_select, #category_edit_input{
   width:100%;
 }
